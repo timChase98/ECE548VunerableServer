@@ -1,0 +1,75 @@
+.red {
+  background-color: #FF0000;
+  color: #FFFFFF;
+}
+
+.blue {
+  background-color: #0000FF;
+  color: #FFFFFF;
+}
+
+.submitted {
+  background-color: #00FF00;
+  color: #FFFFFF;
+}
+
+.missingR {
+  background-color: #FFFF00;
+  color: #FF0000;
+}
+
+.missingB {
+  background-color: #FFFF00;
+  color: #0000FF;
+}
+
+
+.noSubs {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.good {
+  color: #FFFFFF;
+  background-color: #00FF00;
+}
+
+.ok {
+  color: #FFFFFF;
+  background-color: #FFFF00;
+}
+
+.meh {
+  color: #FFFFFF;
+  background-color: #FF8000;
+}
+
+.bad {
+  color: #FFFFFF;
+  background-color: #FF0000;
+}
+
+.verify{
+  width: 25%;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td {
+  text-align: center;
+  width: auto;
+  vertical-align: middle;
+}
+
+th {
+  text-align: center;
+  width: auto;
+  vertical-align: middle;
+}
+
+progress {
+  padding-top: 10%;
+  width:60%;
+}

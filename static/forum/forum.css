@@ -1,0 +1,100 @@
+
+.center{
+  text-align: center;
+}
+
+.colH{
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 5px solid black;
+}
+
+.colLink:link{
+  color: black;
+  text-align: center;
+}
+.colLink:visited{
+  color: black;
+}
+.colLink:hover, colLink:active{
+  color: white;
+  background-color: lightgray;
+}
+
+.rowH:hover{
+  border-style: solid;
+  border-width: 1px;
+}
+
+.checkH{
+  background-color: #00FF00;
+  color: white;
+}
+.matchH{
+  background-color: #808080;
+  color: white;
+}
+
+.match{
+  background-color: rgba(128, 128, 128, .5);
+  text-align: center;
+  color: black;
+}
+
+.redH{
+  background-color: red;
+  color: white;
+}
+.blueH{
+  background-color: blue;
+  color: white;
+}
+
+.check{
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 255, 0, .5);
+}
+
+.red{
+  background-color: rgba(255, 0, 0, .5);
+  text-align: center;
+  color: white;
+
+}
+
+.blue{
+  background-color: rgba(0, 0, 255, .5);
+  text-align: center;
+  color: white;
+}
+
+.red:hover{
+  background-color: rgba(255, 0, 0, .75);
+}
+.blue:hover{
+  background-color: rgba(0, 0, 255, .75);
+}
+
+.redM{
+  text-align: center;
+  color: black;
+  background: repeating-linear-gradient(
+     -55deg,
+     rgba(255, 0, 0, .5),
+     rgba(255, 0, 0, .5) 10%,
+     rgba(255, 255, 0, .5) 10%,
+     rgba(255, 255, 0, .5) 20%);
+);
+}
+.blueM{
+  text-align: center;
+  color: black;
+  background: repeating-linear-gradient(
+     -55deg,
+     rgba(0, 0, 255, .5),
+     rgba(0, 0, 255, .5) 10%,
+     rgba(255, 255, 0, .5) 10%,
+     rgba(255, 255, 0, .5) 20%);
+);
+}

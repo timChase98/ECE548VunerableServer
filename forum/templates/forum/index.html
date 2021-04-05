@@ -1,0 +1,22 @@
+{% extends "forum/base.html" %}
+{% load static %}
+
+{% block content %}
+<table style="width:80%; border:1px solid black;">
+	<tr>
+		<th>Post Title</th>
+		<th>Author</th>
+		<th>Replies</th>
+	</tr>
+	{% for thread in threads %}
+	<tr>
+		<td><a href='{% url "forum:thread" thread.pk %}'>{{thread.title}}</a></td>
+		<td>{{thread.authorUserName}}</td>
+		<td>{{thread.numPosts}}</td>
+	</tr>
+	{% endfor %}
+</table>
+<form action="{% url 'forum:newThread' %}">
+	<input type="submit" value="Create Thread" />
+</form>
+{% endblock %}

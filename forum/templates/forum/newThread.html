@@ -1,0 +1,13 @@
+{% extends "forum/base.html" %}
+{% load static %}
+
+{% block content %}
+<form action="{% url 'forum:newThread' %}" method="post">
+
+	{% csrf_token %}
+	<table>
+		{{ form }}
+	</table>
+	<input type="submit" value="Submit">
+</form>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "forum/base.html" %}
+{% load static %}
+{% block extrahead %}
+<script type="text/javascript">
+	function like(postpk) {
+		var request = new XMLHttpRequest()
+		request.open('POST', '{% url "forum:likePost" %}', true)
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+		request.onload = function() {}
+		d = `postid=${postpk}`
+		request.send(d)
+		console.log(d)
+		location.reload()
+	}
+</script>
+{% endblock %}
+{% block content %}
+<h1>{{thread.title}}</h1>
+<table width="75%">
+	<tr>
+		<th>User</th>
+		<th>Reply</th>
+		<th>Likes</th>
+	</tr>
+	{% for reply in thread.post_set.all %}
+	<tr>
+		<td>{{reply.userName}}</td>
+		<td>{{reply.content}}</td>
+		<td>{{reply.likes}} <button type="button" name="button" , onclick="like({{reply.pk}})">Like +1</button> </td>
+	</tr>
+	{% empty %}
+	<tr>
+		<td></td>
+		<td>no reply</td>
+	</tr>
+	{% endfor %}
+</table>
+<form action="{% url 'forum:newPost' %}" method="post">
+	{% csrf_token %}
+	<input type="hidden" name="threadID" value="{{thread.pk}}">
+
+	<table>
+		<tr>
+			<th><label for="reply">Reply:</label></th>
+			<td><input type="text" name="reply" maxlength="140" required id="reply"></td>
+		</tr>
+		<tr>
+			<th><label for="user">UserName:</label></th>
+			<td><input type="text" name="user" maxlength="16" required id="user"></td>
+		</tr>
+	</table>
+	<input type="submit" value="Submit">
+</form>
+
+{% endblock %}
