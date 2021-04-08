@@ -24,11 +24,9 @@
 	</tr>
 	{% for reply in thread.post_set.all %}
 	<tr>
-		{% autoescape off %}
 		<td>{{reply.userName}}</td>
 		<td>{{reply.content}}</td>
 		<td>{{reply.likes}} <button type="button" name="button" , onclick="like({{reply.pk}})">Like +1</button> </td>
-		{% endautoescape %}
 	</tr>
 	{% empty %}
 	<tr>
@@ -54,5 +52,5 @@
 	<input type="submit" value="Submit">
 </form>
 
-<a href="{% url 'forum:threadS' thread.pk %}" type="button">View Secure Version</a>
+<a href="{% url 'forum:thread' thread.pk %}" type="button">View Unsecure Version</a>
 {% endblock %}

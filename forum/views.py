@@ -59,3 +59,7 @@ def likePost(request):
 class ThreadView(generic.DetailView):
 	model = Thread
 	template_name = "forum/thread.html"
+
+class ThreadViewSecure(generic.DetailView):
+	model = Thread
+	template_name = "forum/threadS.html"

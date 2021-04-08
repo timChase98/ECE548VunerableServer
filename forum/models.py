@@ -17,3 +17,6 @@ class Post(models.Model):
 	content = models.CharField(max_length=280)
 	thread = models.ForeignKey(Thread, on_delete=models.CASCADE)
 	likes = models.IntegerField(default=0)
+
+	def __str__(self):
+		return self.thread.title + " " + self.content
