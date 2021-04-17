@@ -9,5 +9,6 @@ urlpatterns = [
     path('threadS/<int:pk>', views.ThreadViewSecure.as_view(), name='threadS'),
     path('newThread', views.newThread, name='newThread'),
     path('newPost', views.newPost, name='newPost'),
+    path('newPostS', views.newPostS, name='newPostS'),
     path('likePost', views.likePost, name='likePost'),
     ]

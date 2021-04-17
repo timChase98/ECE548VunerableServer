@@ -15,6 +15,9 @@
 </script>
 {% endblock %}
 {% block content %}
+<span class="text-success text-center">
+	<i class="far fa-smile"></i> Secure <i class="far fa-smile"></i>
+</span>
 <h1>{{thread.title}}</h1>
 <table width="75%">
 	<tr>
@@ -35,7 +38,7 @@
 	</tr>
 	{% endfor %}
 </table>
-<form action="{% url 'forum:newPost' %}" method="post">
+<form action="{% url 'forum:newPostS' %}" method="post">
 	{% csrf_token %}
 	<input type="hidden" name="threadID" value="{{thread.pk}}">
 

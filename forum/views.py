@@ -46,6 +46,17 @@ def newPost(request):
 
 	return HttpResponseRedirect(reverse("forum:thread", args=[thread.pk]))
 
+def newPostS(request):
+	if request.method == 'POST':
+		thread = Thread.objects.get(pk=request.POST['threadID'])
+		post = Post()
+		post.thread = thread
+		post.userName = request.POST['user']
+		post.content = request.POST['reply']
+		post.save()
+
+	return HttpResponseRedirect(reverse("forum:threadS", args=[thread.pk]))
+
 @csrf_exempt
 @require_http_methods(["POST"])
 def likePost(request):
